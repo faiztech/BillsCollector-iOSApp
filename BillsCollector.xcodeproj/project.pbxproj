@@ -13,6 +13,8 @@
 		7333B1951F7420550046D701 /* BillsCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7333B1931F7420550046D701 /* BillsCollector.xcdatamodeld */; };
 		7333B1971F7420550046D701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7333B1961F7420550046D701 /* Assets.xcassets */; };
 		7333B19A1F7420550046D701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7333B1981F7420550046D701 /* LaunchScreen.storyboard */; };
+		7333B1A21F7425A50046D701 /* 20170919_173536.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7333B1A11F7425A50046D701 /* 20170919_173536.jpg */; };
+		7333B1A61F7444BE0046D701 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7333B1A51F7444BE0046D701 /* BillsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		7333B1961F7420550046D701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7333B1991F7420550046D701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7333B19B1F7420550046D701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7333B1A11F7425A50046D701 /* 20170919_173536.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 20170919_173536.jpg; path = "../../../../Google Drive/20170919_173536.jpg"; sourceTree = "<group>"; };
+		7333B1A51F7444BE0046D701 /* BillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 		7333B18B1F7420550046D701 /* BillsCollector */ = {
 			isa = PBXGroup;
 			children = (
+				7333B1A51F7444BE0046D701 /* BillsViewController.swift */,
 				7333B18C1F7420550046D701 /* AppDelegate.swift */,
 				7333B18E1F7420550046D701 /* ViewController.swift */,
 				7333B1901F7420550046D701 /* Main.storyboard */,
+				7333B1A11F7425A50046D701 /* 20170919_173536.jpg */,
 				7333B1961F7420550046D701 /* Assets.xcassets */,
 				7333B1981F7420550046D701 /* LaunchScreen.storyboard */,
 				7333B19B1F7420550046D701 /* Info.plist */,
@@ -128,6 +134,7 @@
 				7333B19A1F7420550046D701 /* LaunchScreen.storyboard in Resources */,
 				7333B1971F7420550046D701 /* Assets.xcassets in Resources */,
 				7333B1921F7420550046D701 /* Main.storyboard in Resources */,
+				7333B1A21F7425A50046D701 /* 20170919_173536.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7333B18F1F7420550046D701 /* ViewController.swift in Sources */,
+				7333B1A61F7444BE0046D701 /* BillsViewController.swift in Sources */,
 				7333B1951F7420550046D701 /* BillsCollector.xcdatamodeld in Sources */,
 				7333B18D1F7420550046D701 /* AppDelegate.swift in Sources */,
 			);

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1qN-nu-PbJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,112 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BillsCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OWA-IK-uvf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WD6-Do-zv1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="7yI-qv-2fv" kind="show" id="i7d-25-qaF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="761" y="493"/>
+        </scene>
+        <!--Bills View Controller-->
+        <scene sceneID="5QR-QK-khS">
+            <objects>
+                <viewController id="7yI-qv-2fv" customClass="BillsViewController" customModule="BillsCollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="wQP-Tc-Rg2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20170919_173536.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x3L-sZ-TAf">
+                                <rect key="frame" x="30" y="84" width="315" height="183"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter description of bill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dzr-oU-o1J">
+                                <rect key="frame" x="30" y="290" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q1-hZ-DtO">
+                                <rect key="frame" x="170" y="330" width="35" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="7yI-qv-2fv" eventType="touchUpInside" id="LgE-lq-6ol"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dzr-oU-o1J" firstAttribute="centerX" secondItem="wQP-Tc-Rg2" secondAttribute="centerX" id="FaL-v3-Jxk"/>
+                            <constraint firstItem="x3L-sZ-TAf" firstAttribute="centerX" secondItem="wQP-Tc-Rg2" secondAttribute="centerX" id="NL3-nC-cLD"/>
+                            <constraint firstItem="5XA-j2-Xpm" firstAttribute="bottom" secondItem="x3L-sZ-TAf" secondAttribute="bottom" constant="400" id="Nav-dF-cCh"/>
+                            <constraint firstItem="5XA-j2-Xpm" firstAttribute="trailing" secondItem="x3L-sZ-TAf" secondAttribute="trailing" constant="30" id="Q6w-AC-eGj"/>
+                            <constraint firstItem="x3L-sZ-TAf" firstAttribute="top" secondItem="5XA-j2-Xpm" secondAttribute="top" constant="20" id="Rje-qg-XWF"/>
+                            <constraint firstItem="Dzr-oU-o1J" firstAttribute="top" secondItem="x3L-sZ-TAf" secondAttribute="bottom" constant="23" id="U5l-ym-AgC"/>
+                            <constraint firstItem="5Q1-hZ-DtO" firstAttribute="centerX" secondItem="wQP-Tc-Rg2" secondAttribute="centerX" id="bDJ-NG-OcQ"/>
+                            <constraint firstItem="5Q1-hZ-DtO" firstAttribute="top" secondItem="Dzr-oU-o1J" secondAttribute="bottom" constant="10" id="hep-c3-jUD"/>
+                            <constraint firstItem="Dzr-oU-o1J" firstAttribute="width" secondItem="x3L-sZ-TAf" secondAttribute="width" id="s7p-R1-BXW"/>
+                            <constraint firstItem="x3L-sZ-TAf" firstAttribute="leading" secondItem="5XA-j2-Xpm" secondAttribute="leading" constant="30" id="vpS-wv-CNV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5XA-j2-Xpm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pzY-wt-HIW">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="qan-sh-7L3">
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="7yI-qv-2fv" id="2Yq-n5-Fwh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="wvw-SA-aWh">
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="photosTapped:" destination="7yI-qv-2fv" id="IVL-N7-bdm"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="x3L-sZ-TAf" id="wdw-iK-fC1"/>
+                        <outlet property="textField" destination="Dzr-oU-o1J" id="KZb-Kp-iou"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7a-Vb-IUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="493"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7gn-4Z-Efh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1qN-nu-PbJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tFp-qF-B5b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rLJ-ZR-Icg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxo-KU-QZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78.400000000000006" y="492.95352323838085"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="20170919_173536.jpg" width="2560" height="1920"/>
+    </resources>
 </document>
