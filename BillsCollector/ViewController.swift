@@ -48,13 +48,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = bill.title
         
         cell.imageView?.image = UIImage(data: bill.image as Data!)
-        
-        
-        
         return cell
         
     }
   
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bill  = bills[indexPath.row]
+        
+        performSegue(withIdentifier: "billSegue", sender: bill)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! BillsViewController
+        nextVC.bill = sender as? Bill
+    }
+    
 
 }
 

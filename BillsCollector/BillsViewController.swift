@@ -14,13 +14,30 @@ class BillsViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var addUpdateButton: UIButton!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
     var imagePicker = UIImagePickerController()
+    
+    var bill : Bill? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagePicker.delegate = self
         
+        if bill != nil
+        {
+            imageView.image  = UIImage(data: bill!.image as Data!)
+            textField.text = bill!.title
+            
+            addUpdateButton.setTitle("UPDATE", for: .normal)
+        }
+        else
+        {
+            deleteButton.isHidden = true
+        }
     }
 
     
@@ -40,28 +57,44 @@ class BillsViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     
     @IBAction func cameraTapped(_ sender: Any) {
-        
-        
-        
-        
-        
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
         
     }
     
+    
+    
     @IBAction func addTapped(_ sender: Any) {
         
-       let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let bill = Bill(context:context)
-        
-        bill.title = textField.text
-         bill.image = UIImagePNGRepresentation(imageView.image!)
-        
+        if bill != nil
+        {
+            bill!.title = textField.text
+            bill!.image = UIImagePNGRepresentation(imageView.image!)
+        }
+        else{
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let bill = Bill(context:context)
+            
+            bill.title = textField.text
+            bill.image = UIImagePNGRepresentation(imageView.image!)
+        }
+        //saving
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
-        
         //pop back
         navigationController!.popViewController(animated: true)
     }
+    
+ 
+    @IBAction func deleteTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+context.delete(bill!)
+        //saving
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        //pop back
+        navigationController!.popViewController(animated: true)
+    }
+    
     
 }
